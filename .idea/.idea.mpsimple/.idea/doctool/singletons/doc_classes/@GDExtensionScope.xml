@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="@GDExtensionScope">
+  <members>
+    <member name="EOSGPacketPeerMediator" type="EOSGPacketPeerMediator" setter="" getter="">Singleton registered by a GDExtension.</member>
+    <member name="IEOS" type="IEOS" setter="" getter="">Singleton registered by a GDExtension.</member>
+  </members>
+</class>
+
