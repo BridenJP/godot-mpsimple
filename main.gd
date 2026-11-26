@@ -40,6 +40,9 @@ func _ready() -> void:
 	multiplayer.peer_connected.connect(add_player)
 	multiplayer.peer_disconnected.connect(remove_player)
 
+	# Tell the spawner how to spawn
+	spawner.spawn_function = spawn_player
+
 	# Connect all signals BEFORE requesting login, so we never miss a response.
 	status_label.text = "Connecting to EOS..."
 	EOSManager.initialize_and_login()

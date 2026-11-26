@@ -4,19 +4,13 @@ extends CharacterBody2D
 
 
 func _enter_tree() -> void:
-	# The host named this node using its owner's Godot peer ID.
-	# Every computer receives the same name via MultiplayerSpawner.
+	# Give control of this player to the correct peer.
 	var peer_id = int(str(name))
 
 	# Authority means which peer is responsible for updating this node.
 	# This also sets authority on its children, including the synchronizer.
 	# Do this on every machine, before the node is fully ready.
 	set_multiplayer_authority(peer_id)
-
-	# All machines calculate the same initial position for this player.
-	# This simple example separates the host and the first guest only.
-	var offset_x = 0.0 if peer_id == 1 else 100.0
-	position = Vector2(400 + offset_x, 300)
 
 
 func _physics_process(_delta: float) -> void:
